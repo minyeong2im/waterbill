@@ -2,40 +2,66 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     background-color: #f8f9fa;
+    display: flex; /* 화면을 header/nav/main 구조로 나눌 때 필수 */
 }
 
 header {
     background-color: #0a4275;
     color: white;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
+nav {
+    background-color: #0a4275;
+    color: white;
+    width: 220px;       /* 사이드바의 가로폭 */
+    height: 100vh;      /* 화면 전체 높이 */
+    position: fixed;    /* 스크롤 해도 항상 */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column; /* 메뉴를 세로로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    padding-top: 80px;      /* 헤더높이만큼 아래로 내림 */
+}
+/* 메뉴 리스트 */
 nav ul {
-    list-style: none;
-    margin: 0;
+    list-style: none;       /* 불릿(⚫️) 제거 */
+    margin: 0;              
     padding: 0;
-    display: flex;
-    gap: 20px;
+    width: 100%;            /* 메뉴 전체  폭을 nav에 맞춤 */
+}
+/* 각 메뉴 항목 */
+nav ul li {
+    width: 100%;
 }
 
+/* 메뉴 링크 스타일 */
 nav a {
+    display: block;     /* 전체 영역 클릭 가능 */
+    width: 100;
+    padding: 12px 20px;
     color:white;
     text-decoration: none;
     font-weight: 500;
+    transition: background-color 0.2s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #1266a1;
 }
-
+/* --본문 영역-- */
 main {
-    padding: 60px;
+    margin-left: 240px;     /* nav(220px) + 여백(20px) */
+    padding: 100px 60px 60px;   /* 상단 헤더와 간격 조절 */
     text-align: center;
 }
-
+/* 푸터 */
 footer {
     background-color: #eee;
     padding: 15px;
